@@ -1,0 +1,212 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+
+export default function ExperienceTimeline() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0, 0.2, 1] as const,
+      },
+    },
+  };
+
+  const experiences = [
+    {
+      title: "Lead Django Developer",
+      company: "SevvenLabs",
+      period: "Aug 2025 – Present",
+      location: "Remote",
+      type: "Full-time",
+      description: [
+        "Built HCRM integrated with webhook + VAPI AI for intelligent patient management",
+        "Managed backend development team and established code quality standards",
+        "Designed deployment pipelines and CI/CD processes for production systems",
+        "Architected scalable microservices for healthcare management solutions"
+      ],
+      technologies: ["Django", "VAPI AI", "Webhooks", "PostgreSQL", "Docker", "AWS"],
+      color: "neon-blue",
+      bgGradient: "from-blue-500/10 to-cyan-500/10",
+      borderColor: "border-blue-500/30",
+    },
+    {
+      title: "Freelance Django Developer",
+      company: "Independent",
+      period: "Jan 2024 – Aug 2025",
+      location: "Remote",
+      type: "Freelance",
+      description: [
+        "Delivered 30+ Django-based systems including eCommerce, AI, and SaaS platforms",
+        "Developed file-sharing platforms with advanced encryption and access control",
+        "Created real-time systems using Django Channels and WebSocket technology",
+        "Implemented ML-powered solutions for resume ranking and data analysis"
+      ],
+      technologies: ["Django", "Python", "REST API", "Celery", "Redis", "MySQL"],
+      color: "neon-green",
+      bgGradient: "from-green-500/10 to-emerald-500/10",
+      borderColor: "border-green-500/30",
+    },
+  ];
+
+  return (
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-neon-green/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4">
+            My{' '}
+            <span className="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-white">
+              Journey
+            </span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full mx-auto mb-6"></div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            From freelance projects to leading development teams, here&apos;s my professional evolution in backend development.
+          </p>
+        </motion.div>
+
+        {/* Timeline */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="relative"
+        >
+          {/* Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-neon-green"></div>
+
+          {/* Experience Items */}
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className={`relative flex flex-col md:flex-row ${
+                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                } items-center gap-8`}
+              >
+                {/* Timeline Dot */}
+                <div className={`absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-${exp.color} rounded-full border-4 border-gray-900 shadow-lg glow-${exp.color.split('-')[1]} z-10`}></div>
+
+                {/* Content Card */}
+                <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${index % 2 === 0 ? '' : 'md:mr-12'}`}>
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    className={`p-6 rounded-xl bg-gradient-to-br ${exp.bgGradient} border ${exp.borderColor} backdrop-blur-sm hover:border-opacity-50 transition-all duration-300 cursor-glow`}
+                  >
+                    {/* Header */}
+                    <div className="mb-4">
+                      <div className="flex items-start justify-between mb-2">
+                        <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                        <span className={`px-2 py-1 text-xs font-medium rounded-full bg-${exp.color}/20 text-${exp.color} border border-${exp.color}/30`}>
+                          {exp.type}
+                        </span>
+                      </div>
+                      <h4 className={`text-lg font-semibold text-${exp.color} mb-2`}>
+                        {exp.company}
+                      </h4>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-400">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>{exp.period}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span>{exp.location}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <div className="mb-4">
+                      <ul className="space-y-2 text-gray-300">
+                        {exp.description.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className={`w-1.5 h-1.5 rounded-full bg-${exp.color} mt-2 flex-shrink-0`}></span>
+                            <span className="text-sm leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-xs font-medium bg-gray-800/50 text-gray-300 rounded-full border border-gray-700/50"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Spacer for alternating layout */}
+                <div className="hidden md:block md:w-5/12"></div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
+          className="text-center mt-16"
+        >
+          <div className="p-8 rounded-xl bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold mb-4">
+              Want to see more of my work?
+            </h3>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              Check out my detailed portfolio showcasing the projects I&apos;ve built and the impact they&apos;ve made.
+            </p>
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg font-semibold text-white hover:from-neon-purple hover:to-neon-pink transition-all duration-300 cursor-glow"
+            >
+              View My Projects
+              <ExternalLink className="w-4 h-4" />
+            </motion.a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
