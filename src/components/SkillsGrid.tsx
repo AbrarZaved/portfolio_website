@@ -173,7 +173,7 @@ export default function SkillsGrid() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4">
             Technical{' '}
-            <span className="bg-gradient-to-r from-neon-purple to-neon-green bg-clip-text text-transparent">
+            <span className="text-white">
               Expertise
             </span>
           </h2>

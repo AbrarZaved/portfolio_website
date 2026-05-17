@@ -44,10 +44,10 @@ export default function ExperienceTimeline() {
       ],
       technologies: ["Django", "DRF", "WebSockets", "Celery", "Redis", "PostgreSQL", "Docker", "VAPI AI"],
       links: [
-        { label: "OrbitalFitness", url: "#" },
-        { label: "EduTutor", url: "#" },
-        { label: "Roarse", url: "#" },
-        { label: "Hilliye", url: "#" },
+        { label: "OrbitalFitness", url: "https://orbitalfitness.us/" },
+        { label: "EduTutor", url: "https://portal.ohryot.org/" },
+        { label: "Roarse", url: "https://roarse.com/" },
+        { label: "Hilliye", url: "https://prod.hiiliye.com/" },
       ],
       color: "neon-blue",
       bgGradient: "from-blue-500/10 to-cyan-500/10",
@@ -110,7 +110,7 @@ export default function ExperienceTimeline() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4">
             My{' '}
-            <span className="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent">
+            <span className="text-white">
               Journey
             </span>
           </h2>

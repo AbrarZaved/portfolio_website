@@ -230,7 +230,7 @@ export default function ProjectsGrid() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4">
             Featured{' '}
-            <span className="bg-gradient-to-r from-neon-green to-neon-blue bg-clip-text text-transparent">
+            <span className="text-white">
               Projects
             </span>
           </h2>
