@@ -137,9 +137,8 @@ export default function ExperienceTimeline() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`relative flex flex-col md:flex-row ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } items-start gap-8`}
+                className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  } items-start gap-8`}
               >
                 {/* Timeline Dot */}
                 <div className={`absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-${exp.color} rounded-full border-4 border-gray-900 shadow-lg z-10 mt-6`}></div>

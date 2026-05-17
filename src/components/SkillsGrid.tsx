@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { 
-  Database, 
-  Server, 
-  Shield, 
-  Zap, 
+import {
+  Database,
+  Server,
+  Shield,
+  Zap,
   Cloud,
   GitBranch,
   Brain,
@@ -221,8 +221,8 @@ export default function SkillsGrid() {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ 
-                        duration: 0.5, 
+                      transition={{
+                        duration: 0.5,
                         delay: categoryIndex * 0.05 + skillIndex * 0.05,
                         ease: [0.4, 0, 0.2, 1]
                       }}
