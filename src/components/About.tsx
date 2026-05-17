@@ -118,21 +118,23 @@ export default function About() {
 
             <motion.div variants={itemVariants} className="space-y-6 text-gray-300 leading-relaxed">
               <p className="text-lg">
-                I&apos;m a <span className="text-neon-blue font-semibold">motivated Django developer</span> with 
-                extensive experience building <span className="text-neon-green font-semibold">30+ production-ready systems</span>. 
-                My expertise spans across REST APIs, scalable backend architectures, and cloud deployment strategies.
+                I&apos;m a <span className="text-neon-blue font-semibold">Backend Engineer</span> with 2+ years of
+                professional experience building{' '}
+                <span className="text-neon-green font-semibold">30+ production-grade Django systems</span> across
+                healthcare, fintech, logistics, and education sectors.
               </p>
               
               <p className="text-lg">
-                Passionate about <span className="text-neon-purple font-semibold">backend development</span>, 
-                security implementations, and performance optimization. I thrive on creating 
-                <span className="text-neon-pink font-semibold"> intelligent, secure, and scalable systems</span> that 
-                solve real-world problems.
+                Proven track record of leading backend teams, reducing API latency by up to{' '}
+                <span className="text-neon-purple font-semibold">30%</span>, and integrating{' '}
+                <span className="text-neon-pink font-semibold">real-time and AI-driven features</span> into scalable
+                architectures — from WebSockets and Celery to VAPI AI and OpenAI integrations.
               </p>
               
               <p className="text-lg">
-                Currently leading backend development at <span className="text-neon-blue font-semibold">SevvenLabs</span>, 
-                where I architect cutting-edge solutions and mentor development teams to deliver exceptional results.
+                Currently working as <span className="text-neon-blue font-semibold">Jr. Backend Developer at JVAI</span>,
+                building platforms like QuranApp, OrbitalFitness, EduTutor, and a multi-vendor eCommerce system (Hilliye)
+                with 30+ endpoints.
               </p>
             </motion.div>
 

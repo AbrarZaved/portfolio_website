@@ -29,21 +29,47 @@ export default function ExperienceTimeline() {
 
   const experiences = [
     {
-      title: "Lead Django Developer",
-      company: "SevvenLabs",
-      period: "Aug 2025 – Present",
-      location: "Remote",
+      title: "Jr. Backend Developer",
+      company: "JVAI",
+      period: "Dec 2025 – Present",
+      location: "Dhaka, Bangladesh",
       type: "Full-time",
       description: [
-        "Built HCRM integrated with webhook + VAPI AI for intelligent patient management",
-        "Managed backend development team and established code quality standards",
-        "Designed deployment pipelines and CI/CD processes for production systems",
-        "Architected scalable microservices for healthcare management solutions"
+        "Built QuranApp — a region-based Quran app serving 100+ regional configs with prayer time automation, Qibla calculation, and fasting tracker handling 5,000+ daily time-based updates",
+        "Developed SoundsByWade (OrbitalFitness) — a multi-role fitness platform with 10+ core modules, real-time communication, payment integration, and ~35% latency reduction via query optimization",
+        "Delivered EduTutor — a multi-role learning platform (Admin/Teacher/Student) with AI-powered assistant and 20+ REST APIs covering auth, RBAC, and learning workflows",
+        "Engineered a Slack-like real-time collaboration system supporting chat, video calling, and screen sharing across 100+ concurrent channels with sub-200ms message delivery",
+        "Integrated a real-time shipper-carrier live chat in Roarse (Shipping Carrier System), reducing coordination delay ~40% via persistent WebSocket connections",
+        "Architecting Hilliye — a multi-vendor eCommerce platform with 30+ endpoints, vendor onboarding, commission management, and RBAC dashboards; optimised DB relations cut query time ~25%",
       ],
-      technologies: ["Django", "VAPI AI", "Webhooks", "PostgreSQL", "Docker", "AWS"],
+      technologies: ["Django", "DRF", "WebSockets", "Celery", "Redis", "PostgreSQL", "Docker", "VAPI AI"],
+      links: [
+        { label: "OrbitalFitness", url: "#" },
+        { label: "EduTutor", url: "#" },
+        { label: "Roarse", url: "#" },
+        { label: "Hilliye", url: "#" },
+      ],
       color: "neon-blue",
       bgGradient: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-500/30",
+    },
+    {
+      title: "Lead Django Developer",
+      company: "SevvenLabs",
+      period: "Aug 2025 – Dec 2025",
+      location: "Dhaka, Bangladesh",
+      type: "Full-time",
+      description: [
+        "Led a backend team of 3 developers; established code review standards and deployment pipelines that reduced release cycle time by 35%",
+        "Built and deployed HCRM — a Hospital CRM integrated with VAPI AI assistant and webhook pipelines on VPS, cutting backend response latency by 30%",
+        "Coordinated with cross-functional teams (frontend, QA, design) to deliver production-ready features on schedule across 3 concurrent project tracks",
+        "Architected scalable microservices for healthcare management using Django, SSE, and PostgreSQL",
+      ],
+      technologies: ["Django", "VAPI AI", "Webhooks", "SSE", "PostgreSQL", "Docker", "VPS"],
+      links: [],
+      color: "neon-purple",
+      bgGradient: "from-purple-500/10 to-pink-500/10",
+      borderColor: "border-purple-500/30",
     },
     {
       title: "Freelance Django Developer",
@@ -52,12 +78,13 @@ export default function ExperienceTimeline() {
       location: "Remote",
       type: "Freelance",
       description: [
-        "Delivered 30+ Django-based systems including eCommerce, AI, and SaaS platforms",
-        "Developed file-sharing platforms with advanced encryption and access control",
-        "Created real-time systems using Django Channels and WebSocket technology",
-        "Implemented ML-powered solutions for resume ranking and data analysis"
+        "Delivered 30+ production-ready Django systems for clients across eCommerce, file-sharing, university transport, and AI-powered HR tooling — achieving 100% on-time delivery rate",
+        "Implemented REST APIs, MySQL/PostgreSQL databases, session-based authentication, and Celery task queues; systems collectively handled 10,000+ monthly active users",
+        "Built NovaShare — an enterprise-grade file-sharing platform with AES/RSA encryption, RBAC, expiring links, and download limits",
+        "Developed TasteCart — a full-featured food delivery app with real-time order tracking, AJAX cart, and multi-role dashboards as Project Lead and Backend Developer",
       ],
-      technologies: ["Django", "Python", "REST API", "Celery", "Redis", "MySQL"],
+      technologies: ["Django", "Python", "REST API", "Celery", "Redis", "MySQL", "PostgreSQL", "AES/RSA"],
+      links: [],
       color: "neon-green",
       bgGradient: "from-green-500/10 to-emerald-500/10",
       borderColor: "border-green-500/30",
@@ -83,13 +110,13 @@ export default function ExperienceTimeline() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4">
             My{' '}
-            <span className="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent text-white">
+            <span className="bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent">
               Journey
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full mx-auto mb-6"></div>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            From freelance projects to leading development teams, here&apos;s my professional evolution in backend development.
+            From freelance projects to leading development teams — my professional evolution in backend engineering.
           </p>
         </motion.div>
 
@@ -112,10 +139,10 @@ export default function ExperienceTimeline() {
                 variants={itemVariants}
                 className={`relative flex flex-col md:flex-row ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } items-center gap-8`}
+                } items-start gap-8`}
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-${exp.color} rounded-full border-4 border-gray-900 shadow-lg glow-${exp.color.split('-')[1]} z-10`}></div>
+                <div className={`absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-${exp.color} rounded-full border-4 border-gray-900 shadow-lg z-10 mt-6`}></div>
 
                 {/* Content Card */}
                 <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${index % 2 === 0 ? '' : 'md:mr-12'}`}>
@@ -128,7 +155,7 @@ export default function ExperienceTimeline() {
                     <div className="mb-4">
                       <div className="flex items-start justify-between mb-2">
                         <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                        <span className={`px-2 py-1 text-xs font-medium rounded-full bg-${exp.color}/20 text-${exp.color} border border-${exp.color}/30`}>
+                        <span className={`px-2 py-1 text-xs font-medium rounded-full bg-${exp.color}/20 text-${exp.color} border border-${exp.color}/30 shrink-0 ml-2`}>
                           {exp.type}
                         </span>
                       </div>
@@ -158,6 +185,24 @@ export default function ExperienceTimeline() {
                         ))}
                       </ul>
                     </div>
+
+                    {/* Live Links */}
+                    {exp.links.length > 0 && (
+                      <div className="mb-4 flex flex-wrap gap-2">
+                        {exp.links.map((link, i) => (
+                          <a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full bg-${exp.color}/20 text-${exp.color} border border-${exp.color}/30 hover:bg-${exp.color}/30 transition-colors`}
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
