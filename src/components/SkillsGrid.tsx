@@ -7,7 +7,9 @@ import {
   Shield, 
   Zap, 
   Cloud,
-  GitBranch
+  GitBranch,
+  Brain,
+  Code2,
 } from 'lucide-react';
 
 export default function SkillsGrid() {
@@ -46,81 +48,107 @@ export default function SkillsGrid() {
 
   const skillCategories = [
     {
-      title: "Backend Development",
-      icon: Server,
+      title: "Languages",
+      icon: Code2,
       color: "neon-blue",
       bgGradient: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-500/30",
       skills: [
-        { name: "Django", icon: "🐍" },
         { name: "Python", icon: "🐍" },
-        { name: "REST API", icon: "🔌" },
-        { name: "GraphQL", icon: "📊" },
+        { name: "JavaScript", icon: "🟨" },
+        { name: "C / C++", icon: "⚙️" },
+        { name: "HTML", icon: "🌐" },
+      ]
+    },
+    {
+      title: "Backend Frameworks",
+      icon: Server,
+      color: "neon-green",
+      bgGradient: "from-green-500/10 to-emerald-500/10",
+      borderColor: "border-green-500/30",
+      skills: [
+        { name: "Django", icon: "🐍" },
+        { name: "Django REST Framework", icon: "🔌" },
+        { name: "Django Channels", icon: "📡" },
+        { name: "Swagger / OpenAPI", icon: "📄" },
       ]
     },
     {
       title: "Database & Storage",
       icon: Database,
-      color: "neon-green",
-      bgGradient: "from-green-500/10 to-emerald-500/10",
-      borderColor: "border-green-500/30",
-      skills: [
-        { name: "PostgreSQL", icon: "🐘" },
-        { name: "MySQL", icon: "🐬" },
-        { name: "SQLite", icon: "📁" },
-        { name: "Redis", icon: "🔴" },
-      ]
-    },
-    {
-      title: "DevOps & Cloud",
-      icon: Cloud,
       color: "neon-purple",
       bgGradient: "from-purple-500/10 to-pink-500/10",
       borderColor: "border-purple-500/30",
       skills: [
-        { name: "Docker", icon: "🐳" },
-        { name: "AWS", icon: "☁️" },
-        { name: "Railway", icon: "🚄" },
-        { name: "Render", icon: "🎨" },
+        { name: "PostgreSQL", icon: "🐘" },
+        { name: "MySQL", icon: "🐬" },
+        { name: "Redis", icon: "🔴" },
+        { name: "AWS S3", icon: "🪣" },
       ]
     },
     {
-      title: "Real-time & Performance",
+      title: "Real-time & Async",
       icon: Zap,
       color: "neon-pink",
       bgGradient: "from-pink-500/10 to-red-500/10",
       borderColor: "border-pink-500/30",
       skills: [
-        { name: "Celery", icon: "⚡" },
         { name: "WebSockets", icon: "🔌" },
-        { name: "Channels", icon: "📡" },
-        { name: "Caching", icon: "💾" },
+        { name: "Celery", icon: "⚡" },
+        { name: "SSE (Server-Sent Events)", icon: "📨" },
+        { name: "RabbitMQ", icon: "🐇" },
       ]
     },
     {
-      title: "Security & Integration",
-      icon: Shield,
+      title: "AI & Integrations",
+      icon: Brain,
       color: "neon-blue",
       bgGradient: "from-blue-500/10 to-indigo-500/10",
       borderColor: "border-blue-500/30",
       skills: [
-        { name: "AES Encryption", icon: "🔒" },
-        { name: "API Integration", icon: "🔗" },
-        { name: "OAuth", icon: "🔐" },
-        { name: "JWT", icon: "🎫" },
+        { name: "VAPI AI", icon: "🤖" },
+        { name: "OpenAI API", icon: "🧠" },
+        { name: "Webhook Pipelines", icon: "🔗" },
+        { name: "REST API Integration", icon: "🔌" },
       ]
     },
     {
-      title: "Development Tools",
-      icon: GitBranch,
+      title: "DevOps & Cloud",
+      icon: Cloud,
       color: "neon-green",
       bgGradient: "from-green-500/10 to-teal-500/10",
       borderColor: "border-green-500/30",
       skills: [
-        { name: "Git", icon: "📂" },
-        { name: "GitHub", icon: "🐙" },
-        { name: "VS Code", icon: "💻" },
+        { name: "Docker", icon: "🐳" },
+        { name: "GitHub Actions (CI/CD)", icon: "⚙️" },
+        { name: "DigitalOcean / VPS", icon: "🖥️" },
+        { name: "Railway / Render / AWS", icon: "☁️" },
+      ]
+    },
+    {
+      title: "Security",
+      icon: Shield,
+      color: "neon-purple",
+      bgGradient: "from-purple-500/10 to-violet-500/10",
+      borderColor: "border-purple-500/30",
+      skills: [
+        { name: "AES / RSA Encryption", icon: "🔒" },
+        { name: "Role-Based Access Control", icon: "🛡️" },
+        { name: "JWT Authentication", icon: "🎫" },
+        { name: "Session Auth", icon: "🔐" },
+      ]
+    },
+    {
+      title: "Web Server & Tools",
+      icon: GitBranch,
+      color: "neon-pink",
+      bgGradient: "from-pink-500/10 to-rose-500/10",
+      borderColor: "border-pink-500/30",
+      skills: [
+        { name: "Nginx / Gunicorn", icon: "🌐" },
         { name: "Postman", icon: "📮" },
+        { name: "Git / GitHub", icon: "🐙" },
+        { name: "VS Code", icon: "💻" },
       ]
     },
   ];
@@ -145,7 +173,7 @@ export default function SkillsGrid() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4">
             Technical{' '}
-            <span className="bg-gradient-to-r from-neon-purple to-neon-green bg-clip-text text-transparent text-white">
+            <span className="bg-gradient-to-r from-neon-purple to-neon-green bg-clip-text text-transparent">
               Expertise
             </span>
           </h2>
@@ -161,7 +189,7 @@ export default function SkillsGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
@@ -195,12 +223,10 @@ export default function SkillsGrid() {
                       viewport={{ once: true }}
                       transition={{ 
                         duration: 0.5, 
-                        delay: categoryIndex * 0.1 + skillIndex * 0.1,
+                        delay: categoryIndex * 0.05 + skillIndex * 0.05,
                         ease: [0.4, 0, 0.2, 1]
                       }}
-                      className="space-y-2"
                     >
-                      {/* Skill Name and Icon */}
                       <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-800/30 border border-gray-700/30 hover:border-gray-600/50 transition-colors">
                         <span className="text-xl">{skill.icon}</span>
                         <span className="text-sm font-medium text-white">
@@ -223,7 +249,7 @@ export default function SkillsGrid() {
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.5 }}
           className="mt-16 p-8 rounded-xl bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-gray-700/50 backdrop-blur-sm"
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-neon-blue mb-2">Django</div>
               <div className="text-sm text-gray-400">Primary Framework</div>
@@ -237,8 +263,8 @@ export default function SkillsGrid() {
               <div className="text-sm text-gray-400">System Specialist</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-neon-pink mb-2">Cloud</div>
-              <div className="text-sm text-gray-400">Deployment Expert</div>
+              <div className="text-3xl font-bold text-neon-pink mb-2">AI-Ready</div>
+              <div className="text-sm text-gray-400">Integration Expert</div>
             </div>
           </div>
         </motion.div>
