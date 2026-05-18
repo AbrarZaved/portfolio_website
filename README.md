@@ -104,6 +104,7 @@ This project is ready for deployment on platforms like:
 - Netlify
 - Railway
 - AWS Amplify
+- VPS Services
 
 ## 📄 License
 
